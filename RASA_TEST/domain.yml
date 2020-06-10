@@ -1,0 +1,65 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- weather_city
+- weather
+- population
+- stock_market
+- out_of_scope
+entities:
+- city
+- rate
+slots:
+  city:
+    type: text
+  rate:
+    type: text
+responses:
+  utter_greet:
+  - text: Hey! How are you?
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_temp:
+  - text: Today's temperature is {temp} degree Celcius in {city}.
+  utter_population:
+  - text: Population of {city} is 6 crores.
+  utter_stock:
+  - text: Stock price(USD) of {rate} is {temp}.
+  utter_default:
+  - text: Sorry I didn't understand..
+  utter_custom_fallback:
+  - text: please enter the valid city name
+actions:
+- action_weather_city
+- utter_temp
+- action_weather
+- utter_population
+- action_slot_reset
+- action_stock_market
+- utter_stock
+- action_custom_fallback
+- utter_custom_fallback
+- utter_greet
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- utter_iamabot
+- utter_default
